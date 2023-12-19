@@ -1,27 +1,48 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Image from '../images/appicon.png';
 
 const NavBar = () => {
   return (
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-light" style={{height: '80px',}}>
-            {/* <Link to='/'><img src={Logo} alt="Logo" width="50" height="50" class="d-inline-block align-top" style={{marginRight: "30px"}}/></Link> */}
-            <Link to='/'><a class="navbar-brand" href="#" style={{fontWeight: 'bold', fontFamily: 'cursive', fontSize: '25px', marginRight: '30px'}}>App Name</a></Link>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <div class="ml-auto">
-                
-              </div>
-            </div>
-        </nav>
-        <hr/>
-    </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <Link to="/" style={{textDecoration: 'none'}}><a class="navbar-brand" href="#" style={styles.navTopic}>TaskEase</a></Link> 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"></a>
+            </li>
+            <li class="nav-item">
+              <Link to="/allTasks" style={{textDecoration: 'none'}}> <a className="nav-link" href="#" style={styles.navbtn}>My Tasks</a></Link>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" style={styles.navbtn}>My Profile</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+          </form>
+        </div>
+      </div>
+    </nav>
   )
 }
 
+const styles = {
+    navbtn: {
+        color: 'darkgreen',
+        fontSize: '20px',
+        fontWeight: 'bold',
+    },
+
+    navTopic: {
+        color: 'darkblue',
+        fontSize: '30px',
+        fontWeight: 'bold',
+    }
+}
 
 
 export default NavBar
